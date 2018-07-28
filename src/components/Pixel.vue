@@ -1,5 +1,5 @@
 <template>
-	<div :class="['pixel', color]"></div>
+	<div :class="['pixel', color, isCurrent]"></div>
 </template>
 
 <script>
@@ -7,7 +7,13 @@ export default {
 	name: 'Pixel',
 	props: {
 		color: String,
+		current: Boolean,
 	},
+	computed: {
+		isCurrent() {
+			return this.current ? 'current' : '';
+		}
+	}
 }
 </script>
 
@@ -16,6 +22,10 @@ export default {
 	border: 1px solid lightgray;
 	width: 2rem;
 	height: 2rem;
+
+	&.current {
+		border: 4px solid yellow;
+	}
 }
 
 .white {

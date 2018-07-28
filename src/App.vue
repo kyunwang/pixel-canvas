@@ -1,6 +1,6 @@
 <template>
 	<div id="app">
-		<ColorPicker />
+		<ColorPicker :color="color" />
 		<Canvas />
 	</div>
 </template>
@@ -15,6 +15,11 @@ export default {
 	 Canvas,
 	 ColorPicker,
   },
+  data() {
+	  return {
+		  color: 'white'
+	  }
+  }
 };
 </script>
 
