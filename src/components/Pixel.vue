@@ -1,15 +1,33 @@
 <template>
-	<div class="pixel"></div>
+	<div :class="['pixel', color]"></div>
 </template>
 
 <script>
-export default {}
+export default {
+	name: 'Pixel',
+	props: {
+		color: String,
+	},
+}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .pixel {
 	border: 1px solid lightgray;
 	width: 2rem;
 	height: 2rem;
+}
+
+.white {
+	background-color: white;
+}
+.lightblue {
+	background-color: rgb(0, 188, 212);
+}
+.blue {
+	background-color: rgb(3, 169, 244);
+}
+.darkblue {
+	background-color: rgb(33, 150, 243);
 }
 </style>
