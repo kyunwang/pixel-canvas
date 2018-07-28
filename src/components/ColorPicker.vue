@@ -1,9 +1,9 @@
 <template>
 	<div>
-		<Pixel color="white" :current="checkCurrent('white')" />
-		<Pixel color="lightblue" :current="checkCurrent('lightblue')" />
-		<Pixel color="blue" :current="checkCurrent('blue')" />
-		<Pixel color="darkblue" :current="checkCurrent('darkblue')" />
+		<Pixel interactive color="white" :current="checkCurrent('white')" />
+		<Pixel interactive color="lightblue" :current="checkCurrent('lightblue')" />
+		<Pixel interactive color="blue" :current="checkCurrent('blue')" />
+		<Pixel interactive color="darkblue" :current="checkCurrent('darkblue')" />
 	</div>
 </template>
 
@@ -19,7 +19,7 @@ export default {
 	},
 	methods: {
 		checkCurrent(color) {
-			return color == this.color;
+			return color == this.color ? true : false;
 		}
 	}
 }

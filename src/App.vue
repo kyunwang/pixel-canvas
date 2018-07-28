@@ -1,7 +1,7 @@
 <template>
 	<div id="app">
 		<ColorPicker :color="color" />
-		<Canvas />
+		<Canvas :color="color" />
 	</div>
 </template>
 
@@ -19,7 +19,15 @@ export default {
 	  return {
 		  color: 'white'
 	  }
-  }
+  },
+  mounted() {
+	  this.$root.$on('updateColor', this.updateColor);
+  },
+  methods: {
+	  updateColor(color) {
+		  this.color = color;
+	  },
+  },
 };
 </script>
 
@@ -34,8 +42,14 @@ export default {
 	font-family: 'Avenir', Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	text-align: center;
 	color: #2c3e50;
+	background-color: #333;
+	height: 100vh;
 	margin-top: 60px;
 }
 </style>

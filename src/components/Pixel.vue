@@ -1,5 +1,5 @@
 <template>
-	<div :class="['pixel', color, isCurrent]"></div>
+	<div @click="interactive && changeColor(color)" :class="['pixel', color, isCurrent]"></div>
 </template>
 
 <script>
@@ -8,12 +8,18 @@ export default {
 	props: {
 		color: String,
 		current: Boolean,
+		interactive: Boolean,
 	},
 	computed: {
 		isCurrent() {
 			return this.current ? 'current' : '';
 		}
-	}
+	},
+	methods: {
+		changeColor(color) {
+			this.$root.$emit('updateColor', color)
+		},
+	},
 }
 </script>
 

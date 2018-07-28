@@ -1,6 +1,6 @@
 <template>
 	<div class="canvas">
-		<Pixel v-for="p in 30*30" :key="p" color="blue" />
+		<Pixel v-for="p in 30*30" :key="p" :color="color" />
 	</div>
 </template>
 
@@ -11,6 +11,9 @@ import Pixel from './Pixel';
 export default {
 	components: {
 		Pixel,
+	},
+	props: {
+		color: String,
 	},
 }
 </script>
