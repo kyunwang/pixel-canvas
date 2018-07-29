@@ -1,4 +1,8 @@
-# test
+# Pixel Canvas
+
+A teeny pixel art canvas with the dimensions of 30 x 30
+
+![](src/assets/preview.png)
 
 ## Project setup
 ```
